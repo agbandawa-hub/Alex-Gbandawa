@@ -53,8 +53,11 @@ footer {
 }.products {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-card {
