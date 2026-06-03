@@ -59,11 +59,20 @@ footer {
 
 .product-card {
     background-color: white;
-    width: 300px;
+    width: 250px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px gray;
-    text-align: center;
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
 }form {
     background-color: white;
     width: 350px;
