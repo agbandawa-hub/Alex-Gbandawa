@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator — GradeTrack SL</title>
+  <meta name="description" content="Calculate your semester GPA using a credit-weighted formula.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-logo" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--amber); display: inline-block; margin-right: 2px;">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+        </svg>
+        GradeTrack
+        <span class="brand-sub">Sierra Leone</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="history.html">History</a>
+        <a href="grading-scale.html">Grading Scale</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <p class="page-eyebrow">Calculator</p>
+    <h1 class="page-title">Add your courses for this semester</h1>
+    <p class="page-lede">
+      Enter each course, its credit hours, and the grade you earned. The calculator weighs
+      each course by its credit value, the same way your registry computes your official GPA.
+    </p>
+
+    <form id="calculatorForm">
+      <div class="panel">
+        <h2 class="panel-title">Course Ledger</h2>
+
+        <div class="field-group" style="max-width: 360px;">
+          <label for="semesterName">Semester label (optional)</label>
+          <input type="text" id="semesterName" placeholder="e.g. Semester 06, March 2027">
+        </div>
+
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th class="col-name">Course</th>
+              <th class="col-credit">Credits</th>
+              <th class="col-grade">Grade</th>
+              <th class="col-points">Points</th>
+              <th class="col-remove"></th>
+            </tr>
+          </thead>
+          <tbody id="courseRows">
+            <!-- rows injected by calculator.js -->
+          </tbody>
+        </table>
+
+        <div class="ledger-actions">
+          <button type="button" id="addRowBtn" class="btn-secondary btn">+ Add Course</button>
+          <button type="submit" class="btn">Calculate GPA</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="result-card" id="resultCard">
+      <div class="result-grid">
+        <div>
+          <p class="result-gpa-label">Semester GPA</p>
+          <p class="result-gpa-value" id="gpaValue">0.00</p>
+          <p class="result-meta">
+            <span id="resultCourseCount">0</span> courses &middot;
+            <span id="resultCreditsTotal">0</span> credit hours
+          </p>
+        </div>
+        <span class="status-stamp status-good" id="standingStamp">Good Standing</span>
+      </div>
+      <div id="adviceMessage" class="advice-box" style="display: none;"></div>
+      <div class="result-actions">
+        <button type="button" class="btn" id="saveSemesterBtn">Save This Semester</button>
+        <a href="history.html" class="btn-ghost btn">View History</a>
+      </div>
+    </div>
+
+    <div class="notice">
+      This calculator uses a standard reference grading scale (see the
+      <a href="grading-scale.html">Grading Scale page</a>). If your institution's official
+      handbook specifies different decimal values, your exact GPA may vary slightly —
+      use the <a href="feedback.html">Feedback</a> page to let us know.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>GradeTrack SL &mdash; built for students, not institutions.</span>
+      <a href="grading-scale.html">View grading scale</a>
+    </div>
+  </footer>
+
+  <script src="grading-scale.js"></script>
+  <script src="calculator.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

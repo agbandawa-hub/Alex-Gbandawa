@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grading Scale — GradeTrack SL</title>
+  <meta name="description" content="The reference grading scale used by the GradeTrack SL calculator.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-logo" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--amber); display: inline-block; margin-right: 2px;">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+        </svg>
+        GradeTrack
+        <span class="brand-sub">Sierra Leone</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="history.html">History</a>
+        <a href="grading-scale.html">Grading Scale</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <p class="page-eyebrow">Reference</p>
+    <h1 class="page-title">Grading Scale</h1>
+    <p class="page-lede">
+      GradeTrack SL converts each letter grade into grade points, then weighs those points by
+      credit hours to compute your GPA. The table below is the scale used throughout this tool.
+    </p>
+
+    <div class="panel">
+      <h2 class="panel-title">Reference Scale</h2>
+      <table class="scale-table">
+        <thead>
+          <tr>
+            <th>Letter Grade</th>
+            <th>Grade Points</th>
+            <th>Typical Percentage Band</th>
+          </tr>
+        </thead>
+        <tbody id="scaleTableBody">
+          <!-- rows injected below -->
+        </tbody>
+      </table>
+
+      <div class="notice">
+        This is a standard Commonwealth-style reference scale, not an official copy of any
+        single institution's handbook. Grade point values can differ slightly between
+        universities and even between programmes. If your institution's official scale uses
+        different decimal values, your true GPA may vary slightly from what this calculator
+        shows. Use the <a href="feedback.html">Feedback</a> page to report your institution's
+        exact scale so it can be considered for a future update.
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="panel-title">How the Formula Works</h2>
+      <p style="margin:0 0 0.8rem;">
+        For each course, grade points are multiplied by credit hours to get quality points.
+        The semester GPA is the sum of all quality points divided by the total credit hours
+        attempted that semester.
+      </p>
+      <p style="margin:0; font-family: var(--font-data); background: var(--parchment); padding: 0.9rem 1rem; border-radius: 3px; border: 1px solid var(--parchment-line);">
+        GPA = (&Sigma; grade points &times; credit hours) &divide; (&Sigma; credit hours)
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>GradeTrack SL &mdash; built for students, not institutions.</span>
+      <a href="grading-scale.html">View grading scale</a>
+    </div>
+  </footer>
+
+  <script src="grading-scale.js"></script>
+  <script src="nav.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const body = document.getElementById('scaleTableBody');
+      body.innerHTML = GRADE_SCALE.map(function (g) {
+        return '<tr><td>' + g.grade + '</td><td class="points">' + g.points.toFixed(2) + '</td><td>' + g.band + '</td></tr>';
+      }).join('');
+    });
+  </script>
+</body>
+</html>
