@@ -724,3 +724,11 @@ textarea:focus {
   border-left-color: var(--clay);
   background: var(--clay-bg);
 }
+.sponsor-section::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #b8860b;
+    margin-bottom: 20px;
+}
