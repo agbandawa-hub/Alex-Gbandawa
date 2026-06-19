@@ -732,3 +732,9 @@ textarea:focus {
     background: #b8860b;
     margin-bottom: 20px;
 }
+.sponsor-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+}
