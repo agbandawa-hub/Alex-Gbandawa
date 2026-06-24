@@ -5,8 +5,8 @@
 // Use the Feedback page to report a different scale if yours differs.
 
 const GRADE_SCALE = [
-  { grade: 'A+', points: 4.0, band: '90 - 100%' },
-  { grade: 'A',  points: 4.0, band: '80 - 89%' },
+  { grade: 'A+', points: 4.0, band: '95 - 100%' },
+  { grade: 'A',  points: 4.0, band: '85 - 89%' },
   { grade: 'A-', points: 3.7, band: '75 - 79%' },
   { grade: 'B+', points: 3.5, band: '70 - 74%' },
   { grade: 'B',  points: 3.0, band: '65 - 69%' },
